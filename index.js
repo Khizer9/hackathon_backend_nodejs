@@ -2,6 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import routes from "./src/routes/index.js";
 import mongoose from "mongoose";
+import cors from "cors";
 import { ENV } from "./src/constants/index.js";
 import chalk from "chalk";
 
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(helmet());
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect(`mongodb+srv://khizer:khizer12@cluster0.k0zou9s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
 
